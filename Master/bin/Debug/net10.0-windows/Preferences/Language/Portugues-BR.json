@@ -1,0 +1,9 @@
+{
+  "rato": {
+    "tooltip": {
+      "picHide": "Ocultar menu",
+      "label_system_opacity": "Opacidade do sistema",
+      "label_border_size": "Tamanho da borda"
+    }
+  }
+}

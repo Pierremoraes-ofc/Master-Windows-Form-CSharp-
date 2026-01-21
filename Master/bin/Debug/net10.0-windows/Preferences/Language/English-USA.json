@@ -1,0 +1,9 @@
+{
+  "rato": {
+    "tooltip": {
+      "picHide": "Hide Menu",
+      "label_system_opacity": "System opacity",
+      "label_border_size": "Border size"
+    }
+  }
+}
