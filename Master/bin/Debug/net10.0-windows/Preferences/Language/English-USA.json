@@ -4,6 +4,15 @@
       "picHide": "Hide Menu",
       "label_system_opacity": "System opacity",
       "label_border_size": "Border size"
+    },
+    "menu": {
+      "home": "HOME",
+      "mouse": "MOUSE",
+      "remap": "REMAP",
+      "macro": "MACRO",
+      "dpi": "DPI",
+      "profile": "PROFILE",
+      "setting": "SETTING"
     }
   }
 }

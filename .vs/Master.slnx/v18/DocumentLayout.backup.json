@@ -1,22 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master\\",
+  "WorkspaceRootPath": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|c:\\users\\bruno\\onedrive\\documentos\\github\\smartofficehybrid\\baseform\\master\\master\\biblioteca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\master\\masterform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|solutionrelative:master\\masterform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|c:\\users\\bruno\\onedrive\\documentos\\github\\smartofficehybrid\\baseform\\master-windows-form-c-\\master\\sistemas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|solutionrelative:master\\sistemas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|c:\\users\\bruno\\onedrive\\documentos\\github\\smartofficehybrid\\baseform\\master-windows-form-c-\\master\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|solutionrelative:master\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|c:\\users\\bruno\\onedrive\\documentos\\github\\smartofficehybrid\\baseform\\master-windows-form-c-\\master\\sistemas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|solutionrelative:master\\sistemas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|c:\\users\\bruno\\onedrive\\documentos\\github\\smartofficehybrid\\baseform\\master-windows-form-c-\\master\\masterform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|solutionrelative:master\\masterform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|c:\\users\\bruno\\onedrive\\documentos\\github\\smartofficehybrid\\baseform\\master-windows-form-c-\\master\\biblioteca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|solutionrelative:master\\biblioteca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|c:\\users\\bruno\\onedrive\\documentos\\github\\smartofficehybrid\\baseform\\master\\master\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|solutionrelative:master\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|c:\\users\\bruno\\onedrive\\documentos\\github\\smartofficehybrid\\baseform\\master\\master\\languagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|solutionrelative:master\\languagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|c:\\users\\bruno\\onedrive\\documentos\\github\\smartofficehybrid\\baseform\\master\\master\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|solutionrelative:master\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|c:\\users\\bruno\\onedrive\\documentos\\github\\smartofficehybrid\\baseform\\master-windows-form-c-\\master\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8F6FA6E-0D23-AF84-3FFF-6B70EC282DAB}|Master\\Master.csproj|solutionrelative:master\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,55 +38,92 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LanguageManager.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master\\Master\\LanguageManager.cs",
-              "RelativeDocumentMoniker": "Master\\LanguageManager.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master\\Master\\LanguageManager.cs",
-              "RelativeToolTip": "Master\\LanguageManager.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAwCcAAAAsAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "FormMenu.cs",
+              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\FormMenu.cs",
+              "RelativeDocumentMoniker": "Master\\FormMenu.cs",
+              "ToolTip": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\FormMenu.cs",
+              "RelativeToolTip": "Master\\FormMenu.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAwwEQAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-21T05:12:36.728Z",
+              "WhenOpened": "2026-02-01T23:48:56.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormMenu.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\FormMenu.cs",
+              "RelativeDocumentMoniker": "Master\\FormMenu.cs",
+              "ToolTip": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\FormMenu.cs [Projeto]",
+              "RelativeToolTip": "Master\\FormMenu.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T23:49:34.501Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Sistemas.cs",
+              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\Sistemas.cs",
+              "RelativeDocumentMoniker": "Master\\Sistemas.cs",
+              "ToolTip": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\Sistemas.cs",
+              "RelativeToolTip": "Master\\Sistemas.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowMgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T00:55:04.562Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master\\Master\\Form1.cs",
-              "RelativeDocumentMoniker": "Master\\Form1.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master\\Master\\Form1.cs",
-              "RelativeToolTip": "Master\\Form1.cs",
-              "ViewState": "AgIAANIAAAAAAAAAAAAjwNoAAAAYAAAAAAAAAA==",
+              "Title": "Sistemas.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\Sistemas.cs",
+              "RelativeDocumentMoniker": "Master\\Sistemas.cs",
+              "ToolTip": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\Sistemas.cs [Projeto]",
+              "RelativeToolTip": "Master\\Sistemas.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T00:47:06.626Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MasterForm.cs",
+              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\MasterForm.cs",
+              "RelativeDocumentMoniker": "Master\\MasterForm.cs",
+              "ToolTip": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\MasterForm.cs",
+              "RelativeToolTip": "Master\\MasterForm.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAowLcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-18T19:51:56.489Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form1.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master\\Master\\Form1.cs",
-              "RelativeDocumentMoniker": "Master\\Form1.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master\\Master\\Form1.cs [Projeto]",
-              "RelativeToolTip": "Master\\Form1.cs [Projeto]",
+              "DocumentIndex": 0,
+              "Title": "MasterForm.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\MasterForm.cs",
+              "RelativeDocumentMoniker": "Master\\MasterForm.cs",
+              "ToolTip": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\MasterForm.cs [Projeto]",
+              "RelativeToolTip": "Master\\MasterForm.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-21T05:03:50.179Z",
               "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "biblioteca.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master\\Master\\biblioteca.cs",
+              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\biblioteca.cs",
               "RelativeDocumentMoniker": "Master\\biblioteca.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master\\Master\\biblioteca.cs",
+              "ToolTip": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\biblioteca.cs",
               "RelativeToolTip": "Master\\biblioteca.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAA4AAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAALAAAAAAAAAAAAA1wNQAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-20T05:11:42.314Z",
               "EditorCaption": ""

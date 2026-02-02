@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master\\Master\\Master.csproj": {}
+    "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\Master.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master\\Master\\Master.csproj": {
+    "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\Master.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master\\Master\\Master.csproj",
+        "projectUniqueName": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\Master.csproj",
         "projectName": "Master",
-        "projectPath": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master\\Master\\Master.csproj",
+        "projectPath": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\Master.csproj",
         "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master\\Master\\obj\\",
+        "outputPath": "C:\\Users\\bruno\\OneDrive\\Documentos\\GitHub\\SmartOfficeHybrid\\BaseForm\\Master-Windows-Form-C-\\Master\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,12 @@
       "frameworks": {
         "net10.0-windows7.0": {
           "targetAlias": "net10.0-windows",
+          "dependencies": {
+            "FontAwesome.Sharp": {
+              "target": "Package",
+              "version": "[6.6.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

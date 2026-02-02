@@ -35,8 +35,8 @@
             timer1 = new System.Windows.Forms.Timer(components);
             gradientPanel1 = new BrainerStorm.codes.GradientPanel();
             panelProgressBg = new Panel();
-            timer2 = new System.Windows.Forms.Timer(components);
             panelProgressFill = new Panel();
+            timer2 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pic_info).BeginInit();
             gradientPanel1.SuspendLayout();
             panelProgressBg.SuspendLayout();
@@ -86,6 +86,7 @@
             // 
             gradientPanel1.Angle = 180F;
             gradientPanel1.ColorBottom = Color.Red;
+            gradientPanel1.ColorMiddle = Color.FromArgb(40, 40, 40);
             gradientPanel1.ColorTop = Color.FromArgb(40, 40, 40);
             gradientPanel1.Controls.Add(panelProgressBg);
             gradientPanel1.Dock = DockStyle.Top;
