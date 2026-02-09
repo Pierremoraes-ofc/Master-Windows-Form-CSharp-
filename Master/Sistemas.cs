@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Master.MouseSystem;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,9 @@ namespace Master
 
         Color BorderColor;
         Color BackgroundColor;
+
+        //  Debug do mouse
+        private MouseOverlay overlay;
 
         #endregion
 
@@ -67,6 +71,12 @@ namespace Master
 
 
             Cfg_Style();                                        //  Carrega todo visual e configuraçao do sistema
+
+
+            DetectMice();                                       //  Carrega Dados do mouse
+
+            //  INICIA O DPI SCALER
+            MouseDpiScaler.Start(trackBar_dpi_control.Value / 10f);
         }
 
         #endregion
@@ -140,15 +150,20 @@ namespace Master
                 //  Menu Profile
                 panel_Profile.BackColor = Color.FromArgb(224, 224, 224);
 
-                //  Menu DPI
-                panel_Dpi.BackColor = Color.FromArgb(224, 224, 224);
+                //  Menu Botao Esquerdo
+                panel_left_button.BackColor = Color.FromArgb(224, 224, 224);
 
-                //  Menu Macro
-                panel_Macro.BackColor = Color.FromArgb(224, 224, 224);
+                //  Menu Botao Direito
+                panel_right_button.BackColor = Color.FromArgb(224, 224, 224);
 
-                //  Menu Remap
-                panel_Remap.BackColor = Color.FromArgb(224, 224, 224);
+                //  Menu Botao Middle
+                panel_middle_button.BackColor = Color.FromArgb(224, 224, 224);
 
+                //  Menu Botao Lateral Superior
+                panel_x_up_button.BackColor = Color.FromArgb(224, 224, 224);
+
+                //  Menu Botao Lateral Inferior
+                panel_x_down_button.BackColor = Color.FromArgb(224, 224, 224);
             }
             if (Master.biblioteca.DayNight == 1)
             {
@@ -190,14 +205,19 @@ namespace Master
                 panel_Profile.BackColor = Color.FromArgb(40, 40, 40);
 
                 //  Menu DPI
-                panel_Dpi.BackColor = Color.FromArgb(40, 40, 40);
+                panel_left_button.BackColor = Color.FromArgb(40, 40, 40);
 
                 //  Menu Macro
-                panel_Macro.BackColor = Color.FromArgb(40, 40, 40);
+                panel_right_button.BackColor = Color.FromArgb(40, 40, 40);
 
                 //  Menu Remap
-                panel_Remap.BackColor = Color.FromArgb(40, 40, 40);
+                panel_middle_button.BackColor = Color.FromArgb(40, 40, 40);
 
+                //  Menu Botao Lateral Superior
+                panel_x_up_button.BackColor = Color.FromArgb(40, 40, 40);
+
+                //  Menu Botao Lateral Inferior
+                panel_x_down_button.BackColor = Color.FromArgb(40, 40, 40);
             }
         }
         public void LoadStyle()
@@ -220,16 +240,20 @@ namespace Master
             panel_Dashboard.Dock = DockStyle.Fill;
             panel_Settings.Dock = DockStyle.Fill;
             panel_Profile.Dock = DockStyle.Fill;
-            panel_Dpi.Dock = DockStyle.Fill;
-            panel_Macro.Dock = DockStyle.Fill;
-            panel_Remap.Dock = DockStyle.Fill;
+            panel_left_button.Dock = DockStyle.Fill;
+            panel_right_button.Dock = DockStyle.Fill;
+            panel_middle_button.Dock = DockStyle.Fill;
+            panel_x_up_button.Dock = DockStyle.Fill;
+            panel_x_down_button.Dock = DockStyle.Fill;
 
             panel_Dashboard.Visible = true;
             panel_Settings.Visible = false;
             panel_Profile.Visible = false;
-            panel_Dpi.Visible = false;
-            panel_Macro.Visible = false;
-            panel_Remap.Visible = false;
+            panel_left_button.Visible = false;
+            panel_right_button.Visible = false;
+            panel_middle_button.Visible = false;
+            panel_x_up_button.Visible = false;
+            panel_x_down_button.Visible = false;
 
             //  Setting 
             //Pictures do Border e Background color
@@ -286,18 +310,23 @@ namespace Master
             panel_Dashboard.Visible = false;
             panel_Settings.Visible = false;
             panel_Profile.Visible = false;
-            panel_Dpi.Visible = false;
-            panel_Macro.Visible = false;
-            panel_Remap.Visible = false;
+            panel_left_button.Visible = false;
+            panel_right_button.Visible = false;
+            panel_middle_button.Visible = false;
+            panel_x_up_button.Visible = false;
+            panel_x_down_button.Visible = false;
         }
         public enum SistemaMenu
         {
             Dashboard,
             Settings,
             Profile,
-            Dpi,
-            Macro,
-            Remap
+
+            left_button,
+            right_button,
+            middle_button,
+            x_up_button,
+            x_down_button
         }
         public void MenuSelect(SistemaMenu menu, string title)
         {
@@ -317,16 +346,24 @@ namespace Master
                     panel_Profile.Visible = true;
                     break;
 
-                case SistemaMenu.Dpi:
-                    panel_Dpi.Visible = true;
+                case SistemaMenu.left_button:
+                    panel_left_button.Visible = true;
                     break;
 
-                case SistemaMenu.Macro:
-                    panel_Macro.Visible = true;
+                case SistemaMenu.right_button:
+                    panel_right_button.Visible = true;
                     break;
 
-                case SistemaMenu.Remap:
-                    panel_Remap.Visible = true;
+                case SistemaMenu.middle_button:
+                    panel_middle_button.Visible = true;
+                    break;
+
+                case SistemaMenu.x_up_button:
+                    panel_x_up_button.Visible = true;
+                    break;
+
+                case SistemaMenu.x_down_button:
+                    panel_x_down_button.Visible = true;
                     break;
             }
 
@@ -361,8 +398,51 @@ namespace Master
         }
         public void Language()
         {
+            //  BARRA DE MENU
             label_Title.Text = "     " + LanguageManager.Get("rato.menu.home");
+
+            //  MENU SETTING
+            label_language.Text = LanguageManager.Get("rato.setting.label_language");
+            checkBox_start_system.Text = LanguageManager.Get("rato.setting.checkBox_start_system");
+            button_background_color.Text = LanguageManager.Get("rato.setting.button_background_color");
+            button_border_color.Text = LanguageManager.Get("rato.setting.button_border_color");
+            label_system_opacity.Text = LanguageManager.Get("rato.setting.label_system_opacity");
+            label_border_size.Text = LanguageManager.Get("rato.setting.label_border_size");
+            label_border_radius.Text = LanguageManager.Get("rato.setting.label_border_radius");
+            label_border_style.Text = LanguageManager.Get("rato.setting.label_border_style");
+            chkTopLeft.Text = LanguageManager.Get("rato.setting.chkTopLeft");
+            chkTopRight.Text = LanguageManager.Get("rato.setting.chkTopRight");
+            chkBottomRight.Text = LanguageManager.Get("rato.setting.chkBottomRight");
+            chkBottomLeft.Text = LanguageManager.Get("rato.setting.chkBottomLeft");
+            label_color_style.Text = LanguageManager.Get("rato.setting.label_color_style");
+            label_start_system.Text = LanguageManager.Get("rato.setting.label_start_system");
+            label_config_visual.Text = LanguageManager.Get("rato.setting.label_config_visual");
+            label_profile_setting.Text = LanguageManager.Get("rato.setting.label_profile_setting");
+
         }
+
+        #endregion
+
+
+        #region MANAGERS
+
+        private void DetectMice()
+        {
+            var mice = MouseDetector.GetMice();
+
+            foreach (var mouse in mice)
+            {
+                Console.WriteLine("Nome: " + mouse.Name);
+                Console.WriteLine("VID: " + mouse.VID);
+                Console.WriteLine("PID: " + mouse.PID);
+                Console.WriteLine("Handle: " + mouse.Handle);
+                Console.WriteLine("--------------------");
+            }
+        }
+
+        
+
+
 
         #endregion
 
@@ -507,7 +587,26 @@ namespace Master
         #endregion
 
 
+        private void btnOverlay_Click(object sender, EventArgs e)
+        {
+            if (overlay == null || overlay.IsDisposed)
+            {
+                overlay = new MouseOverlay();
+                overlay.Show();
+            }
+            else
+            {
+                overlay.Close();
+                overlay = null;
+            }
+        }
 
 
+        private void trackBar_dpi_control_Scroll(object sender, EventArgs e)
+        {
+            float value = trackBar_dpi_control.Value / 10f;
+
+            MouseDpiScaler.SetMultiplier(value);
+        }
     }
 }

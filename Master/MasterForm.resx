@@ -124,6 +124,26 @@
     <value>131, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="abrirToolStripMenuItem.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfqAgcWAQsKfs6WAAAA
+        o0lEQVQ4T92SvQ0CMQxGbw4KJH46rmIcNoEKUSDu9mADOhaje+hFMUU4JUeLpS+SnTzbsdx1DQPUCrgA
+        A3AFHsArLn/RLhLoLIB1RZv8JkCr9yYwcAeOFZ2AA7AHbhmUGzzGidZKWVHQBBE7pww6pU2AVrSD+MKy
+        BW/zcKJVv+AM0n0LdmAmCN8ZGPs8qsGl5sGl/SM8U1/wMydoyU10ldOSaG96dwPdoUWA2wAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="fecharToolStripMenuItem.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfqAgcVOhpeOr8FAAAA
+        o0lEQVQ4T6XTOwoCMRSFYVGwUEsrEQQfC9HabViKvYKFVj5qF6FLcVGfzDBIYJLxMQcOKcJ/X7lp4I4z
+        Th98wQ19NHIVYHZ+4x3GIZxFzS9TCuAVRiW4SgXYxATtd7If4AxaYxGFg/JSHuCIeQpuoYtexB3McMUy
+        Bg+xxSHhPR54xuBamauc7jmlAsymvUlOO6WgnWn0nasCBGWXNqzWbv/9q14tBCpoq1c8oAAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
   <data name="notifyIcon1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAMMOAADDDgAAAAAAAAAA

@@ -8,11 +8,35 @@
     "menu": {
       "home": "HOME",
       "mouse": "MOUSE",
-      "remap": "REMAP",
-      "macro": "MACRO",
-      "dpi": "DPI",
+      "icon_left_button": "LEFT BUTTON",
+      "icon_right_button": "RIGHT BUTTON",
+      "icon_middle_button": "MIDDLE BUTTON",
+      "icon_x_up_button": "X UP BUTTON",
+      "icon_x_down_button": "X DOWN BUTTON",
       "profile": "PROFILE",
       "setting": "SETTING"
+    },
+    "setting":{
+      "label_language":"Language",
+      "checkBox_start_system":"Start with System",
+      "button_background_color":"Background Color",
+      "button_border_color":"Border Color",
+      "label_system_opacity":"System opacity",
+      "label_border_size":"Border size",
+      "label_border_radius":"Border radius",
+      "label_border_style":"Border Style",
+      "chkTopLeft":"Top Left",
+      "chkTopRight":"Top Right",
+      "chkBottomRight":"Botton Right",
+      "chkBottomLeft":"Botton Left",
+      "label_color_style":"Color Style",
+      "label_start_system":"System initialization",
+      "label_config_visual":"Visual settings",
+      "label_profile_setting":"Profile Settings"
+    },
+    "context":{
+      "fecharToolStripMenuItem":"Close System",
+      "abrirToolStripMenuItem":"Open System"
     }
   }
 }

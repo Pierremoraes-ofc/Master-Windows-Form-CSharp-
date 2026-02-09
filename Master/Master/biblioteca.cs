@@ -1,9 +1,11 @@
 ﻿using System.Drawing.Drawing2D;
+using System.Runtime.InteropServices;
 
 namespace Master
 {
     public static class biblioteca
     {
+        public static string    ProjectName = "";                                   //  Nome do meu projeto centralizado!
         public static FormMenu _formMenu;                                           //  usado para salvar as instâncias!
         public static Sistemas _formSystem;                                         //  usado para salvar as instâncias!
 
@@ -34,7 +36,23 @@ namespace Master
 
 
 
+        // valor padrão
+        public static int botoesMouse = 2;
 
+        // constante do Windows
+        private const int SM_CMOUSEBUTTONS = 43;
+
+        [DllImport("user32.dll")]
+        private static extern int GetSystemMetrics(int nIndex);
+
+        public static void DetectordeBotoes()
+        {
+            botoesMouse = GetSystemMetrics(SM_CMOUSEBUTTONS);
+
+            // segurança caso retorne valor inválido
+            if (botoesMouse < 1)
+                botoesMouse = 2;
+        }
 
         //  Pop-up de Notificações
         public static void Notification(string type, string title, string msg)

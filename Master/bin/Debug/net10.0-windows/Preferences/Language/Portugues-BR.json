@@ -8,11 +8,35 @@
     "menu": {
       "home": "INICIO",
       "mouse": "MOUSE",
-      "remap": "REMAP",
-      "macro": "MACRO",
-      "dpi": "DPI",
+      "icon_left_button": "BOTÃO ESQUERDO",
+      "icon_right_button": "BOTÃO DIREITO",
+      "icon_middle_button": "BOTÃO DO SCROLL",
+      "icon_x_up_button": "BOTÃO LATERAL CIMA",
+      "icon_x_down_button": "BOTÃO LATERAL BAIXO",
       "profile": "PERFIL",
       "setting": "CONFIGURAÇÕES"
+    },
+    "setting":{
+      "label_language":"Idioma",
+      "checkBox_start_system":"Iniciar com o Sistema",
+      "button_background_color":"Cor de Fundo",
+      "button_border_color":"Cor da Borda",
+      "label_system_opacity":"Opacidade do Sistema",
+      "label_border_size":"Tamanho da Borda",
+      "label_border_radius":"Raio da Borda",
+      "label_border_style":"Estilo da Borda",
+      "chkTopLeft":"Superior Esquerdo",
+      "chkTopRight":"Superior Direito",
+      "chkBottomRight":"Inferior Direito",
+      "chkBottomLeft":"Inferior Esquerdo",
+      "label_color_style":"Estilo de Cor",
+      "label_start_system":"Inicialização do Sistema",
+      "label_config_visual":"Configurações Visuais",
+      "label_profile_setting":"Configurações de Perfil"
+    },
+    "context":{
+      "fecharToolStripMenuItem":"Fechar Sistema",
+      "abrirToolStripMenuItem":"Abrir Sistema"
     }
   }
 }

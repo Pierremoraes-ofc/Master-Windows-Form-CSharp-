@@ -19,6 +19,7 @@ namespace Master
         private bool _dragging = false;
         private Point _dragCursor;
         private Point _dragForm;
+        private int total;
 
         #endregion
 
@@ -56,10 +57,12 @@ namespace Master
             AppPaths.EnsureDirectories();
             LanguageManager.Load(Master.biblioteca.InputLanguage);
             Language();
-
+            Cfg_load();
 
             SizeForm(Master.biblioteca.MenuSistema);
 
+            Master.biblioteca.DetectordeBotoes();
+            total = Master.biblioteca.botoesMouse;
 
             DockManager.SetMaster(this);
 
@@ -166,6 +169,16 @@ namespace Master
         #endregion
 
 
+        #region LOADS
+
+        private void Cfg_load()
+        {
+            this.Text = Master.biblioteca.ProjectName;
+            notifyIcon1.Text = Master.biblioteca.ProjectName;
+        }
+        #endregion
+
+
         #region SISTEMA DE IDIOMA
 
         public void ApplyLanguageAll()
@@ -177,6 +190,8 @@ namespace Master
         }
         private void Language()
         {
+            fecharToolStripMenuItem.Text = "  " + LanguageManager.Get("rato.context.fecharToolStripMenuItem");
+            abrirToolStripMenuItem.Text = "  " + LanguageManager.Get("rato.context.abrirToolStripMenuItem");
         }
 
         #endregion
@@ -209,6 +224,9 @@ namespace Master
             Master.biblioteca.Notification("info", "Info", "Funcionou certinho!!");
             Master.biblioteca.Notification("warning", "Alerta", "Funcionou certinho!!");
             Master.biblioteca.Notification("error", "Erro", "Funcionou certinho!!");
+
+            Master.biblioteca.Notification("success", "Sucesso", "Seu mouse tem " + total + " botões");
+
         }
 
     }

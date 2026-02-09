@@ -41,3 +41,4 @@ C:\Users\bruno\OneDrive\Documentos\GitHub\SmartOfficeHybrid\BaseForm\Master-Wind
 C:\Users\bruno\OneDrive\Documentos\GitHub\SmartOfficeHybrid\BaseForm\Master-Windows-Form-C-\Master\bin\Debug\net10.0-windows\FontAwesome.Sharp.dll
 C:\Users\bruno\OneDrive\Documentos\GitHub\SmartOfficeHybrid\BaseForm\Master-Windows-Form-C-\Master\obj\Debug\net10.0-windows\Master.csproj.AssemblyReference.cache
 C:\Users\bruno\OneDrive\Documentos\GitHub\SmartOfficeHybrid\BaseForm\Master-Windows-Form-C-\Master\obj\Debug\net10.0-windows\Master.csproj.Up2Date
+C:\Users\bruno\OneDrive\Documentos\GitHub\SmartOfficeHybrid\BaseForm\Master-Windows-Form-C-\Master\obj\Debug\net10.0-windows\MouseOverlay.resources

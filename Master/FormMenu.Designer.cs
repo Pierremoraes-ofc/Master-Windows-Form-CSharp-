@@ -32,9 +32,11 @@
             panelLogo = new Panel();
             pictureBox1 = new PictureBox();
             panel_menu_mouse = new Panel();
-            icon_dpi = new FontAwesome.Sharp.IconButton();
-            icon_remap = new FontAwesome.Sharp.IconButton();
-            icon_macro = new FontAwesome.Sharp.IconButton();
+            icon_x_down_button = new FontAwesome.Sharp.IconButton();
+            icon_x_up_button = new FontAwesome.Sharp.IconButton();
+            icon_middle_button = new FontAwesome.Sharp.IconButton();
+            icon_right_button = new FontAwesome.Sharp.IconButton();
+            icon_left_button = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
             icon_mouse = new FontAwesome.Sharp.IconButton();
             icon_home = new FontAwesome.Sharp.IconButton();
@@ -70,79 +72,124 @@
             // panel_menu_mouse
             // 
             panel_menu_mouse.BackColor = Color.FromArgb(50, 50, 50);
-            panel_menu_mouse.Controls.Add(icon_dpi);
-            panel_menu_mouse.Controls.Add(icon_remap);
-            panel_menu_mouse.Controls.Add(icon_macro);
+            panel_menu_mouse.Controls.Add(icon_x_down_button);
+            panel_menu_mouse.Controls.Add(icon_x_up_button);
+            panel_menu_mouse.Controls.Add(icon_middle_button);
+            panel_menu_mouse.Controls.Add(icon_right_button);
+            panel_menu_mouse.Controls.Add(icon_left_button);
             panel_menu_mouse.Dock = DockStyle.Top;
             panel_menu_mouse.Location = new Point(0, 194);
             panel_menu_mouse.Name = "panel_menu_mouse";
-            panel_menu_mouse.Size = new Size(234, 130);
+            panel_menu_mouse.Size = new Size(234, 210);
             panel_menu_mouse.TabIndex = 12;
             panel_menu_mouse.Visible = false;
             // 
-            // icon_dpi
+            // icon_x_down_button
             // 
-            icon_dpi.Dock = DockStyle.Top;
-            icon_dpi.FlatStyle = FlatStyle.Flat;
-            icon_dpi.ForeColor = Color.White;
-            icon_dpi.IconChar = FontAwesome.Sharp.IconChar.TachometerAltFast;
-            icon_dpi.IconColor = Color.White;
-            icon_dpi.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            icon_dpi.IconSize = 25;
-            icon_dpi.ImageAlign = ContentAlignment.MiddleLeft;
-            icon_dpi.Location = new Point(0, 80);
-            icon_dpi.Name = "icon_dpi";
-            icon_dpi.Size = new Size(234, 40);
-            icon_dpi.TabIndex = 15;
-            icon_dpi.Text = "iconButton1";
-            icon_dpi.TextAlign = ContentAlignment.MiddleRight;
-            icon_dpi.UseVisualStyleBackColor = true;
-            icon_dpi.Click += icon_dpi_Click;
+            icon_x_down_button.Dock = DockStyle.Top;
+            icon_x_down_button.FlatStyle = FlatStyle.Flat;
+            icon_x_down_button.ForeColor = Color.White;
+            icon_x_down_button.IconChar = FontAwesome.Sharp.IconChar.Mouse;
+            icon_x_down_button.IconColor = Color.White;
+            icon_x_down_button.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            icon_x_down_button.IconSize = 25;
+            icon_x_down_button.ImageAlign = ContentAlignment.MiddleLeft;
+            icon_x_down_button.Location = new Point(0, 160);
+            icon_x_down_button.Name = "icon_x_down_button";
+            icon_x_down_button.Size = new Size(234, 40);
+            icon_x_down_button.TabIndex = 17;
+            icon_x_down_button.Text = "iconButton1";
+            icon_x_down_button.TextAlign = ContentAlignment.MiddleRight;
+            icon_x_down_button.UseVisualStyleBackColor = true;
+            icon_x_down_button.Visible = false;
+            icon_x_down_button.Click += icon_x_down_button_Click;
             // 
-            // icon_remap
+            // icon_x_up_button
             // 
-            icon_remap.Dock = DockStyle.Top;
-            icon_remap.FlatStyle = FlatStyle.Flat;
-            icon_remap.ForeColor = Color.White;
-            icon_remap.IconChar = FontAwesome.Sharp.IconChar.Map;
-            icon_remap.IconColor = Color.White;
-            icon_remap.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            icon_remap.IconSize = 25;
-            icon_remap.ImageAlign = ContentAlignment.MiddleLeft;
-            icon_remap.Location = new Point(0, 40);
-            icon_remap.Name = "icon_remap";
-            icon_remap.Size = new Size(234, 40);
-            icon_remap.TabIndex = 14;
-            icon_remap.Text = "iconButton1";
-            icon_remap.TextAlign = ContentAlignment.MiddleRight;
-            icon_remap.UseVisualStyleBackColor = true;
-            icon_remap.Click += icon_remap_Click;
+            icon_x_up_button.Dock = DockStyle.Top;
+            icon_x_up_button.FlatStyle = FlatStyle.Flat;
+            icon_x_up_button.ForeColor = Color.White;
+            icon_x_up_button.IconChar = FontAwesome.Sharp.IconChar.Mouse;
+            icon_x_up_button.IconColor = Color.White;
+            icon_x_up_button.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            icon_x_up_button.IconSize = 25;
+            icon_x_up_button.ImageAlign = ContentAlignment.MiddleLeft;
+            icon_x_up_button.Location = new Point(0, 120);
+            icon_x_up_button.Name = "icon_x_up_button";
+            icon_x_up_button.Size = new Size(234, 40);
+            icon_x_up_button.TabIndex = 16;
+            icon_x_up_button.Text = "iconButton1";
+            icon_x_up_button.TextAlign = ContentAlignment.MiddleRight;
+            icon_x_up_button.UseVisualStyleBackColor = true;
+            icon_x_up_button.Visible = false;
+            icon_x_up_button.Click += icon_x_up_button_Click;
             // 
-            // icon_macro
+            // icon_middle_button
             // 
-            icon_macro.Dock = DockStyle.Top;
-            icon_macro.FlatStyle = FlatStyle.Flat;
-            icon_macro.ForeColor = Color.White;
-            icon_macro.IconChar = FontAwesome.Sharp.IconChar.Microchip;
-            icon_macro.IconColor = Color.White;
-            icon_macro.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            icon_macro.IconSize = 25;
-            icon_macro.ImageAlign = ContentAlignment.MiddleLeft;
-            icon_macro.Location = new Point(0, 0);
-            icon_macro.Name = "icon_macro";
-            icon_macro.Size = new Size(234, 40);
-            icon_macro.TabIndex = 13;
-            icon_macro.Text = "iconButton1";
-            icon_macro.TextAlign = ContentAlignment.MiddleRight;
-            icon_macro.UseVisualStyleBackColor = true;
-            icon_macro.Click += icon_macro_Click;
+            icon_middle_button.Dock = DockStyle.Top;
+            icon_middle_button.FlatStyle = FlatStyle.Flat;
+            icon_middle_button.ForeColor = Color.White;
+            icon_middle_button.IconChar = FontAwesome.Sharp.IconChar.Mouse;
+            icon_middle_button.IconColor = Color.White;
+            icon_middle_button.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            icon_middle_button.IconSize = 25;
+            icon_middle_button.ImageAlign = ContentAlignment.MiddleLeft;
+            icon_middle_button.Location = new Point(0, 80);
+            icon_middle_button.Name = "icon_middle_button";
+            icon_middle_button.Size = new Size(234, 40);
+            icon_middle_button.TabIndex = 15;
+            icon_middle_button.Text = "iconButton1";
+            icon_middle_button.TextAlign = ContentAlignment.MiddleRight;
+            icon_middle_button.UseVisualStyleBackColor = true;
+            icon_middle_button.Visible = false;
+            icon_middle_button.Click += icon_middle_button_Click;
+            // 
+            // icon_right_button
+            // 
+            icon_right_button.Dock = DockStyle.Top;
+            icon_right_button.FlatStyle = FlatStyle.Flat;
+            icon_right_button.ForeColor = Color.White;
+            icon_right_button.IconChar = FontAwesome.Sharp.IconChar.Mouse;
+            icon_right_button.IconColor = Color.White;
+            icon_right_button.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            icon_right_button.IconSize = 25;
+            icon_right_button.ImageAlign = ContentAlignment.MiddleLeft;
+            icon_right_button.Location = new Point(0, 40);
+            icon_right_button.Name = "icon_right_button";
+            icon_right_button.Size = new Size(234, 40);
+            icon_right_button.TabIndex = 14;
+            icon_right_button.Text = "iconButton1";
+            icon_right_button.TextAlign = ContentAlignment.MiddleRight;
+            icon_right_button.UseVisualStyleBackColor = true;
+            icon_right_button.Visible = false;
+            icon_right_button.Click += icon_right_button_Click;
+            // 
+            // icon_left_button
+            // 
+            icon_left_button.Dock = DockStyle.Top;
+            icon_left_button.FlatStyle = FlatStyle.Flat;
+            icon_left_button.ForeColor = Color.White;
+            icon_left_button.IconChar = FontAwesome.Sharp.IconChar.Mouse;
+            icon_left_button.IconColor = Color.White;
+            icon_left_button.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            icon_left_button.IconSize = 25;
+            icon_left_button.ImageAlign = ContentAlignment.MiddleLeft;
+            icon_left_button.Location = new Point(0, 0);
+            icon_left_button.Name = "icon_left_button";
+            icon_left_button.Size = new Size(234, 40);
+            icon_left_button.TabIndex = 13;
+            icon_left_button.Text = "iconButton1";
+            icon_left_button.TextAlign = ContentAlignment.MiddleRight;
+            icon_left_button.UseVisualStyleBackColor = true;
+            icon_left_button.Visible = false;
+            icon_left_button.Click += icon_left_button_Click;
             // 
             // panel1
             // 
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 364);
+            panel1.Location = new Point(0, 444);
             panel1.Name = "panel1";
-            panel1.Size = new Size(234, 66);
+            panel1.Size = new Size(234, 117);
             panel1.TabIndex = 13;
             panel1.MouseDown += panelLogo_MouseDown;
             panel1.MouseMove += panelLogo_MouseMove;
@@ -197,7 +244,7 @@
             icon_profile.IconFont = FontAwesome.Sharp.IconFont.Auto;
             icon_profile.IconSize = 25;
             icon_profile.ImageAlign = ContentAlignment.MiddleLeft;
-            icon_profile.Location = new Point(0, 324);
+            icon_profile.Location = new Point(0, 404);
             icon_profile.Name = "icon_profile";
             icon_profile.Size = new Size(234, 40);
             icon_profile.TabIndex = 18;
@@ -217,7 +264,7 @@
             icon_setting.IconFont = FontAwesome.Sharp.IconFont.Auto;
             icon_setting.IconSize = 25;
             icon_setting.ImageAlign = ContentAlignment.MiddleLeft;
-            icon_setting.Location = new Point(0, 390);
+            icon_setting.Location = new Point(0, 521);
             icon_setting.Name = "icon_setting";
             icon_setting.Size = new Size(234, 40);
             icon_setting.TabIndex = 19;
@@ -232,7 +279,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(40, 40, 40);
-            ClientSize = new Size(234, 430);
+            ClientSize = new Size(234, 561);
             Controls.Add(icon_setting);
             Controls.Add(panel1);
             Controls.Add(icon_profile);
@@ -259,12 +306,14 @@
         private Panel panel_menu_mouse;
         private PictureBox pictureBox1;
         private Panel panel1;
-        private FontAwesome.Sharp.IconButton icon_dpi;
-        private FontAwesome.Sharp.IconButton icon_remap;
-        private FontAwesome.Sharp.IconButton icon_macro;
+        private FontAwesome.Sharp.IconButton icon_middle_button;
+        private FontAwesome.Sharp.IconButton icon_right_button;
+        private FontAwesome.Sharp.IconButton icon_left_button;
         private FontAwesome.Sharp.IconButton icon_mouse;
         private FontAwesome.Sharp.IconButton icon_home;
         private FontAwesome.Sharp.IconButton icon_profile;
         private FontAwesome.Sharp.IconButton icon_setting;
+        private FontAwesome.Sharp.IconButton icon_x_down_button;
+        private FontAwesome.Sharp.IconButton icon_x_up_button;
     }
 }

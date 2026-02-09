@@ -35,7 +35,6 @@
             abrirToolStripMenuItem = new ToolStripMenuItem();
             fecharToolStripMenuItem = new ToolStripMenuItem();
             button4 = new Button();
-            panelContainer = new Panel();
             toolTip1 = new ToolTip(components);
             contextMenuStrip1.SuspendLayout();
             SuspendLayout();
@@ -49,24 +48,32 @@
             // 
             // contextMenuStrip1
             // 
+            contextMenuStrip1.BackColor = Color.FromArgb(40, 40, 40);
             contextMenuStrip1.Font = new Font("Source Code Pro", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { abrirToolStripMenuItem, fecharToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(117, 48);
+            contextMenuStrip1.RenderMode = ToolStripRenderMode.System;
+            contextMenuStrip1.ShowImageMargin = false;
+            contextMenuStrip1.Size = new Size(99, 48);
             // 
             // abrirToolStripMenuItem
             // 
+            abrirToolStripMenuItem.BackgroundImage = (Image)resources.GetObject("abrirToolStripMenuItem.BackgroundImage");
+            abrirToolStripMenuItem.BackgroundImageLayout = ImageLayout.None;
+            abrirToolStripMenuItem.ForeColor = Color.White;
             abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            abrirToolStripMenuItem.Size = new Size(116, 22);
-            abrirToolStripMenuItem.Text = "Abrir";
+            abrirToolStripMenuItem.Size = new Size(98, 22);
+            abrirToolStripMenuItem.Text = "  Abrir";
             abrirToolStripMenuItem.Click += abrirToolStripMenuItem_Click;
             // 
             // fecharToolStripMenuItem
             // 
+            fecharToolStripMenuItem.BackgroundImage = (Image)resources.GetObject("fecharToolStripMenuItem.BackgroundImage");
+            fecharToolStripMenuItem.BackgroundImageLayout = ImageLayout.None;
             fecharToolStripMenuItem.Font = new Font("Source Code Pro", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             fecharToolStripMenuItem.ForeColor = Color.Red;
             fecharToolStripMenuItem.Name = "fecharToolStripMenuItem";
-            fecharToolStripMenuItem.Size = new Size(116, 22);
+            fecharToolStripMenuItem.Size = new Size(98, 22);
             fecharToolStripMenuItem.Text = "Fechar";
             fecharToolStripMenuItem.Click += fecharToolStripMenuItem_Click;
             // 
@@ -85,16 +92,6 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
-            // panelContainer
-            // 
-            panelContainer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            panelContainer.BackColor = Color.FromArgb(40, 40, 40);
-            panelContainer.Location = new Point(12, 12);
-            panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(35, 430);
-            panelContainer.TabIndex = 8;
-            panelContainer.Visible = false;
-            // 
             // MasterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -102,7 +99,6 @@
             BackColor = Color.FromArgb(40, 40, 40);
             ClientSize = new Size(800, 450);
             Controls.Add(button4);
-            Controls.Add(panelContainer);
             Font = new Font("Source Code Pro", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ForeColor = SystemColors.ControlLight;
             FormBorderStyle = FormBorderStyle.None;
@@ -127,7 +123,6 @@
         private ToolStripMenuItem abrirToolStripMenuItem;
         private ToolStripMenuItem fecharToolStripMenuItem;
         private Button button4;
-        private Panel panelContainer;
         private ToolTip toolTip1;
     }
 }

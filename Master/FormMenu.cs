@@ -31,6 +31,41 @@ namespace Master
             SizeMenu(Master.biblioteca.MenuSistema);
             this.ShowInTaskbar = false;
 
+            this.Size = new Size(234, 430);
+            
+            int total = Master.biblioteca.botoesMouse;
+            if (total == 2)
+            {
+                icon_left_button.Visible = true;
+                icon_right_button.Visible = true;
+                panel_menu_mouse.Size = new Size(234, 90);
+            }
+            if (total == 3)
+            {
+                icon_left_button.Visible = true;
+                icon_right_button.Visible = true;
+                icon_middle_button.Visible = true;
+                panel_menu_mouse.Size = new Size(234, 130);
+            }
+            if (total == 4)
+            {
+                icon_left_button.Visible = true;
+                icon_right_button.Visible = true;
+                icon_middle_button.Visible = true;
+                icon_x_up_button.Visible = true;
+                panel_menu_mouse.Size = new Size(234, 170);
+            }
+            if (total==5)
+            {
+                icon_left_button.Visible = true;
+                icon_right_button.Visible = true;
+                icon_middle_button.Visible = true;
+                icon_x_up_button.Visible = true;
+                icon_x_down_button.Visible = true;
+                panel_menu_mouse.Size = new Size(234, 209);
+            }
+
+
             Cfg_Style();                                        //  Atualiza paramatros de configuraçao
         }
         private void FormMenu_Paint(object sender, PaintEventArgs e)
@@ -79,9 +114,13 @@ namespace Master
         {
             icon_home.Text = "     " + LanguageManager.Get("rato.menu.home");
             icon_mouse.Text = "     " + LanguageManager.Get("rato.menu.mouse");
-            icon_remap.Text = "     " + LanguageManager.Get("rato.menu.remap");
-            icon_macro.Text = "     " + LanguageManager.Get("rato.menu.macro");
-            icon_dpi.Text = "     " + LanguageManager.Get("rato.menu.dpi");
+
+            icon_left_button.Text = "     " + LanguageManager.Get("rato.menu.icon_left_button");
+            icon_right_button.Text = "     " + LanguageManager.Get("rato.menu.icon_right_button");
+            icon_middle_button.Text = "     " + LanguageManager.Get("rato.menu.icon_middle_button");
+            icon_x_up_button.Text = "     " + LanguageManager.Get("rato.menu.icon_x_up_button");
+            icon_x_down_button.Text = "     " + LanguageManager.Get("rato.menu.icon_x_down_button");
+
             icon_profile.Text = "     " + LanguageManager.Get("rato.menu.profile");
             icon_setting.Text = "     " + LanguageManager.Get("rato.menu.setting");
         }
@@ -109,17 +148,25 @@ namespace Master
 
                 panel_menu_mouse.BackColor = Color.Silver;
 
-                icon_macro.IconColor = Color.Black;
-                icon_macro.ForeColor = Color.Black;
-                icon_macro.BackColor = Color.Silver;
+                icon_left_button.IconColor = Color.Black;
+                icon_left_button.ForeColor = Color.Black;
+                icon_left_button.BackColor = Color.Silver;
 
-                icon_remap.IconColor = Color.Black;
-                icon_remap.ForeColor = Color.Black;
-                icon_remap.BackColor = Color.Silver;
+                icon_right_button.IconColor = Color.Black;
+                icon_right_button.ForeColor = Color.Black;
+                icon_right_button.BackColor = Color.Silver;
 
-                icon_dpi.IconColor = Color.Black;
-                icon_dpi.ForeColor = Color.Black;
-                icon_dpi.BackColor = Color.Silver;
+                icon_middle_button.IconColor = Color.Black;
+                icon_middle_button.ForeColor = Color.Black;
+                icon_middle_button.BackColor = Color.Silver;
+
+                icon_x_up_button.IconColor = Color.Black;
+                icon_x_up_button.ForeColor = Color.Black;
+                icon_x_up_button.BackColor = Color.Silver;
+
+                icon_x_down_button.IconColor = Color.Black;
+                icon_x_down_button.ForeColor = Color.Black;
+                icon_x_down_button.BackColor = Color.Silver;
 
                 panel1.BackColor = Color.FromArgb(224, 224, 224);
                 panelLogo.BackColor = Color.FromArgb(224, 224, 224);
@@ -146,24 +193,30 @@ namespace Master
 
                 panel_menu_mouse.BackColor = Color.FromArgb(50, 50, 50);
 
-                icon_macro.IconColor = Color.White;
-                icon_macro.ForeColor = Color.White;
-                icon_macro.BackColor = Color.FromArgb(50, 50, 50);
+                icon_left_button.IconColor = Color.White;
+                icon_left_button.ForeColor = Color.White;
+                icon_left_button.BackColor = Color.FromArgb(50, 50, 50);
 
-                icon_remap.IconColor = Color.White;
-                icon_remap.ForeColor = Color.White;
-                icon_remap.BackColor = Color.FromArgb(50, 50, 50);
+                icon_right_button.IconColor = Color.White;
+                icon_right_button.ForeColor = Color.White;
+                icon_right_button.BackColor = Color.FromArgb(50, 50, 50);
 
-                icon_dpi.IconColor = Color.White;
-                icon_dpi.ForeColor = Color.White;
-                icon_dpi.BackColor = Color.FromArgb(50, 50, 50);
+                icon_middle_button.IconColor = Color.White;
+                icon_middle_button.ForeColor = Color.White;
+                icon_middle_button.BackColor = Color.FromArgb(50, 50, 50);
+
+                icon_x_up_button.IconColor = Color.White;
+                icon_x_up_button.ForeColor = Color.White;
+                icon_x_up_button.BackColor = Color.FromArgb(50, 50, 50);
+
+                icon_x_down_button.IconColor = Color.White;
+                icon_x_down_button.ForeColor = Color.White;
+                icon_x_down_button.BackColor = Color.FromArgb(50, 50, 50);
 
                 panel1.BackColor = Color.FromArgb(40, 40, 40);
                 panelLogo.BackColor = Color.FromArgb(40, 40, 40);
 
             }
-
-
         }
 
         #endregion
@@ -182,18 +235,29 @@ namespace Master
             hideSubmenu();
             showSubmenu(panel_menu_mouse);
         }
-        private void icon_macro_Click(object sender, EventArgs e)
+
+        private void icon_left_button_Click(object sender, EventArgs e)
         {
-            Master.biblioteca._formSystem?.MenuSelect(SistemaMenu.Macro, icon_macro.Text);
+
+            Master.biblioteca._formSystem?.MenuSelect(SistemaMenu.left_button, icon_left_button.Text);
         }
-        private void icon_dpi_Click(object sender, EventArgs e)
+        private void icon_right_button_Click(object sender, EventArgs e)
         {
-            Master.biblioteca._formSystem?.MenuSelect(SistemaMenu.Dpi, icon_dpi.Text);
+            Master.biblioteca._formSystem?.MenuSelect(SistemaMenu.right_button, icon_right_button.Text);
         }
-        private void icon_remap_Click(object sender, EventArgs e)
+        private void icon_middle_button_Click(object sender, EventArgs e)
         {
-            Master.biblioteca._formSystem?.MenuSelect(SistemaMenu.Remap, icon_remap.Text);
+            Master.biblioteca._formSystem?.MenuSelect(SistemaMenu.middle_button, icon_middle_button.Text);
         }
+        private void icon_x_up_button_Click(object sender, EventArgs e)
+        {
+            Master.biblioteca._formSystem?.MenuSelect(SistemaMenu.x_up_button, icon_x_up_button.Text);
+        }
+        private void icon_x_down_button_Click(object sender, EventArgs e)
+        {
+            Master.biblioteca._formSystem?.MenuSelect(SistemaMenu.x_down_button, icon_x_down_button.Text);
+        }
+
 
         private void icon_profile_MouseHover(object sender, EventArgs e)
         {
@@ -237,5 +301,6 @@ namespace Master
         {
             _dragging = false;
         }
+
     }
 }

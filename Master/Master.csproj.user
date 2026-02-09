@@ -4,6 +4,9 @@
     <Compile Update="MasterForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="MouseOverlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Sistemas.cs">
       <SubType>Form</SubType>
     </Compile>
