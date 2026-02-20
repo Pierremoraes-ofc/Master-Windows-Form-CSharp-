@@ -1,13 +1,16 @@
-﻿using Master.MouseSystem;
+﻿using Master.Actions;
+using Master.MouseSystem;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Metrics;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using static Master.Actions.Ax;
 using static Master.biblioteca;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -27,6 +30,11 @@ namespace Master
 
         //  Debug do mouse
         private MouseOverlay overlay;
+
+
+        private KeyCombinationNew currentCombination = new();
+        private bool capturing = false;
+
 
         #endregion
 
@@ -77,6 +85,19 @@ namespace Master
 
             //  INICIA O DPI SCALER
             MouseDpiScaler.Start(trackBar_dpi_control.Value / 10f);
+
+
+
+
+            combobox_right_button_master.Items.Clear();
+
+            foreach (KeyN key in Enum.GetValues(typeof(KeyN)))
+            {
+                combobox_right_button_master.Items.Add(key);
+            }
+
+            combobox_right_button_master.SelectedItem = KeyN.NONE;
+
         }
 
         #endregion
@@ -164,6 +185,9 @@ namespace Master
 
                 //  Menu Botao Lateral Inferior
                 panel_x_down_button.BackColor = Color.FromArgb(224, 224, 224);
+
+                //  Menu de Velocidade do Ponteiro
+                panel_speed_mouse.BackColor = Color.FromArgb(224, 224, 224);
             }
             if (Master.biblioteca.DayNight == 1)
             {
@@ -218,6 +242,9 @@ namespace Master
 
                 //  Menu Botao Lateral Inferior
                 panel_x_down_button.BackColor = Color.FromArgb(40, 40, 40);
+
+                //  Menu de Velocidade do Ponteiro
+                panel_speed_mouse.BackColor = Color.FromArgb(40, 40, 40);
             }
         }
         public void LoadStyle()
@@ -245,6 +272,7 @@ namespace Master
             panel_middle_button.Dock = DockStyle.Fill;
             panel_x_up_button.Dock = DockStyle.Fill;
             panel_x_down_button.Dock = DockStyle.Fill;
+            panel_speed_mouse.Dock = DockStyle.Fill;
 
             panel_Dashboard.Visible = true;
             panel_Settings.Visible = false;
@@ -254,6 +282,7 @@ namespace Master
             panel_middle_button.Visible = false;
             panel_x_up_button.Visible = false;
             panel_x_down_button.Visible = false;
+            panel_speed_mouse.Visible = false;
 
             //  Setting 
             //Pictures do Border e Background color
@@ -273,6 +302,10 @@ namespace Master
             chkTopRight.Checked = Master.biblioteca.MasterTopRight;
             chkBottomLeft.Checked = Master.biblioteca.MasterBottomLeft;
             chkBottomRight.Checked = Master.biblioteca.MasterBottomRight;
+
+            //  Configurações do mouse
+            trackBar_dpi_control.Value = (int)Math.Round(Master.biblioteca.MasterDPI * 100);
+            label_dpi_control_percent.Text = $"{(int)Math.Round(Master.biblioteca.MasterDPI * 20)}%";
 
             if (Master.biblioteca.DayNight == 0)
             {
@@ -315,18 +348,7 @@ namespace Master
             panel_middle_button.Visible = false;
             panel_x_up_button.Visible = false;
             panel_x_down_button.Visible = false;
-        }
-        public enum SistemaMenu
-        {
-            Dashboard,
-            Settings,
-            Profile,
-
-            left_button,
-            right_button,
-            middle_button,
-            x_up_button,
-            x_down_button
+            panel_speed_mouse.Visible = false;
         }
         public void MenuSelect(SistemaMenu menu, string title)
         {
@@ -364,6 +386,10 @@ namespace Master
 
                 case SistemaMenu.x_down_button:
                     panel_x_down_button.Visible = true;
+                    break;
+
+                case SistemaMenu.speed_mouse:
+                    panel_speed_mouse.Visible = true;
                     break;
             }
 
@@ -419,30 +445,14 @@ namespace Master
             label_config_visual.Text = LanguageManager.Get("rato.setting.label_config_visual");
             label_profile_setting.Text = LanguageManager.Get("rato.setting.label_profile_setting");
 
+
+            combobox_right_button_configuration.Items.Clear();
+            combobox_right_button_configuration.Items.Add(LanguageManager.Get("rato.mouseconfig.none"));
+            combobox_right_button_configuration.Items.Add(LanguageManager.Get("rato.mouseconfig.configbutton.key"));
+            combobox_right_button_configuration.Items.Add(LanguageManager.Get("rato.mouseconfig.configbutton.keycombination"));
+            combobox_right_button_configuration.Items.Add(LanguageManager.Get("rato.mouseconfig.configbutton.command"));
+            combobox_right_button_configuration.SelectedIndex = 0;
         }
-
-        #endregion
-
-
-        #region MANAGERS
-
-        private void DetectMice()
-        {
-            var mice = MouseDetector.GetMice();
-
-            foreach (var mouse in mice)
-            {
-                Console.WriteLine("Nome: " + mouse.Name);
-                Console.WriteLine("VID: " + mouse.VID);
-                Console.WriteLine("PID: " + mouse.PID);
-                Console.WriteLine("Handle: " + mouse.Handle);
-                Console.WriteLine("--------------------");
-            }
-        }
-
-        
-
-
 
         #endregion
 
@@ -451,6 +461,7 @@ namespace Master
 
         private void icon_exit_Click(object sender, EventArgs e)
         {
+
             Application.Exit();
         }
         private void icon_minimize_Click(object sender, EventArgs e)
@@ -586,7 +597,21 @@ namespace Master
 
         #endregion
 
+        #region DEBUGGER
 
+        private void DetectMice()
+        {
+            var mice = MouseDetector.GetMice();
+
+            foreach (var mouse in mice)
+            {
+                Console.WriteLine("Nome: " + mouse.Name);
+                Console.WriteLine("VID: " + mouse.VID);
+                Console.WriteLine("PID: " + mouse.PID);
+                Console.WriteLine("Handle: " + mouse.Handle);
+                Console.WriteLine("--------------------");
+            }
+        }
         private void btnOverlay_Click(object sender, EventArgs e)
         {
             if (overlay == null || overlay.IsDisposed)
@@ -601,12 +626,235 @@ namespace Master
             }
         }
 
+        #endregion
+
+        #region MOUSE SETTING
 
         private void trackBar_dpi_control_Scroll(object sender, EventArgs e)
         {
-            float value = trackBar_dpi_control.Value / 10f;
-
-            MouseDpiScaler.SetMultiplier(value);
+            Master.biblioteca.MasterDPI = trackBar_dpi_control.Value / 10f;
+            label_dpi_control_percent.Text = $"{(int)Math.Round(Master.biblioteca.MasterDPI * 20)}%";
+            MouseDpiScaler.SetMultiplier(Master.biblioteca.MasterDPI);
         }
+
+        #endregion
+
+        #region FUNÇÕES IMPORTANTES
+
+        private void IniciarCaptura()
+        {
+            capturing = true;
+
+            // limpa combinação anterior
+            currentCombination = new KeyCombinationNew();
+
+            // limpa texto
+            textbox_right_button_action_combination.Clear();
+
+            textbox_right_button_action_combination.Text = "Pressione as teclas...";
+
+            textbox_right_button_action_combination.SelectionStart = textbox_right_button_action_combination.Text.Length;
+        }
+
+        #endregion
+
+        public class ButtonRemapConfig
+        {
+            public KeyN MasterKey;
+
+            public ActionType ActionType;
+
+            public KeyN Key;
+
+            public KeyN[] Combination;
+
+            public EdicionOpciones? Command;
+
+            public bool BlockOriginal;
+        }
+
+        public ButtonRemapConfig GetRightButtonConfig()
+        {
+            var config = new ButtonRemapConfig();
+
+            // MASTER KEY
+            config.MasterKey =
+                (KeyN)combobox_right_button_master.SelectedItem;
+
+            // TYPE
+            config.ActionType =
+                (ActionType)combobox_right_button_configuration.SelectedIndex;
+
+            config.BlockOriginal =
+                checkbox_right_button.Checked;
+
+            switch (config.ActionType)
+            {
+                case ActionType.Key:
+
+                    config.Key =
+                        (KeyN)combobox_right_button_action.SelectedItem;
+
+                    break;
+
+
+                case ActionType.KeyCombination:
+
+                    config.Combination =
+                        ParseCombination(
+                            textbox_right_button_action_combination.Text);
+
+                    break;
+
+
+                case ActionType.Command:
+
+                    var cmd =
+                        GetCommand(
+                            combobox_right_button_action.SelectedIndex);
+
+                    if (cmd.HasValue)
+                        config.Command = cmd.Value;
+
+                    break;
+            }
+
+            return config;
+        }
+        public static KeyN[] ParseCombination(string text)
+        {
+            string[] parts = text.Split('+');
+
+            List<KeyN> keys = new List<KeyN>();
+
+            foreach (string part in parts)
+            {
+                string key = part.Trim().ToUpper();
+
+                if (Enum.TryParse<KeyN>(key, out var result))
+                    keys.Add(result);
+            }
+
+            return keys.ToArray();
+        }
+
+        public static EdicionOpciones? GetCommand(int index)
+        {
+            if (index <= 0) return null;
+
+            return (EdicionOpciones)(index - 1);
+        }
+        private void combobox_right_button_configuration_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ActionType type = (ActionType)combobox_right_button_configuration.SelectedIndex;
+
+            combobox_right_button_action.Items.Clear();
+
+            switch (type)
+            {
+                case ActionType.None:
+
+                    combobox_right_button_action.Enabled = false;
+                    textbox_right_button_action_combination.Enabled = false;
+
+                    break;
+
+
+                case ActionType.Key:
+
+                    combobox_right_button_action.Enabled = true;
+                    textbox_right_button_action_combination.Enabled = false;
+
+                    foreach (KeyN key in Enum.GetValues(typeof(KeyN)))
+                        combobox_right_button_action.Items.Add(key);
+
+                    break;
+
+
+                case ActionType.Command:
+
+                    combobox_right_button_action.Enabled = true;
+                    textbox_right_button_action_combination.Enabled = false;
+
+                    combobox_right_button_action.Items.Add(LanguageManager.Get("rato.mouseconfig.none"));
+                    combobox_right_button_action.Items.Add(LanguageManager.Get("rato.mouseconfig.actionbutton.copy"));
+                    combobox_right_button_action.Items.Add(LanguageManager.Get("rato.mouseconfig.actionbutton.paste"));
+                    combobox_right_button_action.Items.Add(LanguageManager.Get("rato.mouseconfig.actionbutton.cut"));
+                    combobox_right_button_action.Items.Add(LanguageManager.Get("rato.mouseconfig.actionbutton.undo"));
+                    combobox_right_button_action.Items.Add(LanguageManager.Get("rato.mouseconfig.actionbutton.remake"));
+                    combobox_right_button_action.Items.Add(LanguageManager.Get("rato.mouseconfig.actionbutton.new"));
+                    combobox_right_button_action.Items.Add(LanguageManager.Get("rato.mouseconfig.actionbutton.save"));
+                    combobox_right_button_action.Items.Add(LanguageManager.Get("rato.mouseconfig.actionbutton.openfile"));
+                    combobox_right_button_action.Items.Add(LanguageManager.Get("rato.mouseconfig.actionbutton.selectall"));
+                    combobox_right_button_action.Items.Add(LanguageManager.Get("rato.mouseconfig.actionbutton.search"));
+                    combobox_right_button_action.Items.Add(LanguageManager.Get("rato.mouseconfig.actionbutton.print"));
+
+                    combobox_right_button_action.SelectedIndex = 0;
+
+                    break;
+
+
+                case ActionType.KeyCombination:
+
+                    combobox_right_button_action.Enabled = false;
+                    textbox_right_button_action_combination.Enabled = true;
+
+                    break;
+            }
+        }
+
+        private void combobox_right_button_action_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((ActionType)combobox_right_button_configuration.SelectedIndex == ActionType.Key)
+            {
+                KeyN key = (KeyN)combobox_right_button_action.SelectedItem;
+
+
+            }
+        }
+
+        private void checkbox_right_button_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_start_system.Checked)
+                Master.biblioteca.MasterWinAction = true;
+            else
+                Master.biblioteca.MasterWinAction = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Ax.Executar(currentCombination);
+        }
+        private void textbox_right_button_action_combination_Enter(object sender, EventArgs e)
+        {
+            IniciarCaptura();
+        }
+        private void textbox_right_button_action_combination_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!capturing) return;
+
+            e.SuppressKeyPress = true;
+            e.Handled = true;
+
+            KeyN key = (KeyN)e.KeyCode;
+
+            if (!currentCombination.Keys.Contains(key))
+                currentCombination.Keys.Add(key);
+
+            textbox_right_button_action_combination.Text = currentCombination.ToString();
+        }
+        private void textbox_right_button_action_combination_KeyUp(object sender, KeyEventArgs e)
+        {
+            capturing = false;
+        }
+        private void textbox_right_button_action_combination_Leave(object sender, EventArgs e)
+        {
+            capturing = false;
+        }
+        private void textbox_right_button_action_combination_MouseDown(object sender, MouseEventArgs e)
+        {
+            IniciarCaptura();
+        }
+
     }
 }

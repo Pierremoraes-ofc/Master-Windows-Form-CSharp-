@@ -13,8 +13,30 @@
       "icon_middle_button": "BOTÃO DO SCROLL",
       "icon_x_up_button": "BOTÃO LATERAL CIMA",
       "icon_x_down_button": "BOTÃO LATERAL BAIXO",
+      "icon_speed_mouse": "CONFIGURAÇÕES DO MOUSE",
       "profile": "PERFIL",
       "setting": "CONFIGURAÇÕES"
+    },
+    "mouseconfig":{
+      "none": " ",
+      "configbutton":{
+        "key": "Tecla",
+        "keycombination": "Tecla Combinada",
+        "command": "Comando"
+      },
+      "actionbutton":{
+        "copy": "Copiar",
+        "paste": "Colar",
+        "cut": "Cortar",
+        "undo": "Desfazer",
+        "remake": "Refazer",
+        "new": "Novo",
+        "save": "Salvar",
+        "openfile": "Abrir Arquivo",
+        "selectall": "Selecionar Tudo",
+        "search": "Buscar",
+        "print": "Imprimir"
+      }
     },
     "setting":{
       "label_language":"Idioma",

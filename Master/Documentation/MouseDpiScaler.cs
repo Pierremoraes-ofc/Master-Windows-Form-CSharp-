@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using static Master.WinApi;
 
 namespace Master.MouseSystem
 {
@@ -15,11 +16,9 @@ namespace Master.MouseSystem
 
         private static bool enabled = false;
 
-        [DllImport("user32.dll")]
-        static extern bool GetCursorPos(out Point lpPoint);
 
-        [DllImport("user32.dll")]
-        static extern bool SetCursorPos(int X, int Y);
+        //[DllImport("user32.dll")]
+        //internal static extern bool GetCursorPos(out Point lpPoint);
 
         public static void Start(float dpiMultiplier)
         {

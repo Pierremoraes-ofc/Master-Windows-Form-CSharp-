@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 using Microsoft.Win32;
+using static Master.WinApi;
 
 namespace Master.MouseSystem
 {
@@ -167,24 +168,5 @@ namespace Master.MouseSystem
 
         const uint RIDI_DEVICENAME = 0x20000007;
 
-        [DllImport("User32.dll")]
-        static extern uint GetRawInputDeviceList(
-            RAWINPUTDEVICELIST[] list,
-            ref uint count,
-            uint size);
-
-        [DllImport("User32.dll")]
-        static extern uint GetRawInputDeviceInfo(
-            IntPtr device,
-            uint command,
-            StringBuilder data,
-            ref uint size);
-
-        [StructLayout(LayoutKind.Sequential)]
-        struct RAWINPUTDEVICELIST
-        {
-            public IntPtr hDevice;
-            public uint dwType;
-        }
     }
 }

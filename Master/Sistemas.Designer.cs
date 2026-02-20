@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel_mini_menu = new Panel();
             icon_night = new FontAwesome.Sharp.IconButton();
             icon_menu_v = new FontAwesome.Sharp.IconButton();
@@ -77,13 +78,26 @@
             panel_left_button = new Panel();
             groupBox4 = new GroupBox();
             panel_right_button = new Panel();
+            button1 = new Button();
+            label2 = new Label();
+            textbox_right_button_action_combination = new TextBox();
+            combobox_right_button_action = new ComboBox();
+            combobox_right_button_configuration = new ComboBox();
+            label_label_right_button_combination = new Label();
+            label_label_right_button_action = new Label();
+            label_label_right_configuration = new Label();
+            checkbox_right_button = new CheckBox();
+            combobox_right_button_master = new ComboBox();
+            label_right_button_master_button = new Label();
             panel_middle_button = new Panel();
             panel_Profile = new Panel();
             colorDialog1 = new ColorDialog();
             panel_x_up_button = new Panel();
             panel_x_down_button = new Panel();
+            toolTip_sistemas = new ToolTip(components);
+            panel_speed_mouse = new Panel();
+            label_dpi_control_percent = new Label();
             panel_mini_menu.SuspendLayout();
-            panel_Dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trackBar_dpi_control).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBar_border_radius).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBar_opacityForm).BeginInit();
@@ -98,6 +112,8 @@
             ((System.ComponentModel.ISupportInitialize)pic_border_form).BeginInit();
             groupBox1.SuspendLayout();
             panel_left_button.SuspendLayout();
+            panel_right_button.SuspendLayout();
+            panel_speed_mouse.SuspendLayout();
             SuspendLayout();
             // 
             // panel_mini_menu
@@ -240,8 +256,6 @@
             // panel_Dashboard
             // 
             panel_Dashboard.BackColor = Color.FromArgb(40, 40, 40);
-            panel_Dashboard.Controls.Add(label_dpi_control);
-            panel_Dashboard.Controls.Add(trackBar_dpi_control);
             panel_Dashboard.ForeColor = Color.White;
             panel_Dashboard.Location = new Point(12, 42);
             panel_Dashboard.Name = "panel_Dashboard";
@@ -256,7 +270,7 @@
             label_dpi_control.AutoSize = true;
             label_dpi_control.Font = new Font("Source Code Pro", 10F);
             label_dpi_control.ForeColor = Color.White;
-            label_dpi_control.Location = new Point(128, 202);
+            label_dpi_control.Location = new Point(18, 106);
             label_dpi_control.Name = "label_dpi_control";
             label_dpi_control.Size = new Size(96, 18);
             label_dpi_control.TabIndex = 44;
@@ -264,12 +278,12 @@
             // 
             // trackBar_dpi_control
             // 
-            trackBar_dpi_control.Location = new Point(122, 221);
+            trackBar_dpi_control.Location = new Point(12, 125);
             trackBar_dpi_control.Margin = new Padding(4);
-            trackBar_dpi_control.Maximum = 30;
-            trackBar_dpi_control.Minimum = 1;
+            trackBar_dpi_control.Maximum = 50;
+            trackBar_dpi_control.Minimum = 4;
             trackBar_dpi_control.Name = "trackBar_dpi_control";
-            trackBar_dpi_control.Size = new Size(281, 45);
+            trackBar_dpi_control.Size = new Size(493, 45);
             trackBar_dpi_control.TabIndex = 32;
             trackBar_dpi_control.TickStyle = TickStyle.None;
             trackBar_dpi_control.Value = 10;
@@ -716,6 +730,14 @@
             // 
             // panel_right_button
             // 
+            panel_right_button.Controls.Add(button1);
+            panel_right_button.Controls.Add(label2);
+            panel_right_button.Controls.Add(textbox_right_button_action_combination);
+            panel_right_button.Controls.Add(combobox_right_button_action);
+            panel_right_button.Controls.Add(combobox_right_button_configuration);
+            panel_right_button.Controls.Add(label_label_right_button_combination);
+            panel_right_button.Controls.Add(label_label_right_button_action);
+            panel_right_button.Controls.Add(label_label_right_configuration);
             panel_right_button.Location = new Point(538, 443);
             panel_right_button.Name = "panel_right_button";
             panel_right_button.Size = new Size(520, 394);
@@ -724,6 +746,136 @@
             panel_right_button.MouseDown += panel_Settings_MouseDown;
             panel_right_button.MouseMove += panel_Settings_MouseMove;
             panel_right_button.MouseUp += panel_Settings_MouseUp;
+            // 
+            // button1
+            // 
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Source Code Pro", 7F);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(355, 65);
+            button1.Name = "button1";
+            button1.Size = new Size(97, 22);
+            button1.TabIndex = 48;
+            button1.Text = "Teste";
+            button1.TextAlign = ContentAlignment.TopCenter;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Source Code Pro", 11.25F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(13, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(243, 19);
+            label2.TabIndex = 30;
+            label2.Text = "Right Button Configuration";
+            // 
+            // textbox_right_button_action_combination
+            // 
+            textbox_right_button_action_combination.BackColor = Color.FromArgb(40, 40, 40);
+            textbox_right_button_action_combination.BorderStyle = BorderStyle.FixedSingle;
+            textbox_right_button_action_combination.Location = new Point(13, 234);
+            textbox_right_button_action_combination.Name = "textbox_right_button_action_combination";
+            textbox_right_button_action_combination.Size = new Size(253, 23);
+            textbox_right_button_action_combination.TabIndex = 50;
+            textbox_right_button_action_combination.Enter += textbox_right_button_action_combination_Enter;
+            textbox_right_button_action_combination.KeyDown += textbox_right_button_action_combination_KeyDown;
+            textbox_right_button_action_combination.KeyUp += textbox_right_button_action_combination_KeyUp;
+            textbox_right_button_action_combination.Leave += textbox_right_button_action_combination_Leave;
+            textbox_right_button_action_combination.MouseDown += textbox_right_button_action_combination_MouseDown;
+            // 
+            // combobox_right_button_action
+            // 
+            combobox_right_button_action.BackColor = Color.FromArgb(40, 40, 40);
+            combobox_right_button_action.FlatStyle = FlatStyle.Flat;
+            combobox_right_button_action.ForeColor = Color.White;
+            combobox_right_button_action.FormattingEnabled = true;
+            combobox_right_button_action.Location = new Point(13, 159);
+            combobox_right_button_action.Name = "combobox_right_button_action";
+            combobox_right_button_action.Size = new Size(197, 23);
+            combobox_right_button_action.TabIndex = 49;
+            combobox_right_button_action.SelectedIndexChanged += combobox_right_button_action_SelectedIndexChanged;
+            // 
+            // combobox_right_button_configuration
+            // 
+            combobox_right_button_configuration.BackColor = Color.FromArgb(40, 40, 40);
+            combobox_right_button_configuration.FlatStyle = FlatStyle.Flat;
+            combobox_right_button_configuration.ForeColor = Color.White;
+            combobox_right_button_configuration.FormattingEnabled = true;
+            combobox_right_button_configuration.Location = new Point(13, 86);
+            combobox_right_button_configuration.Name = "combobox_right_button_configuration";
+            combobox_right_button_configuration.Size = new Size(197, 23);
+            combobox_right_button_configuration.TabIndex = 49;
+            combobox_right_button_configuration.SelectedIndexChanged += combobox_right_button_configuration_SelectedIndexChanged;
+            // 
+            // label_label_right_button_combination
+            // 
+            label_label_right_button_combination.AutoSize = true;
+            label_label_right_button_combination.Font = new Font("Source Code Pro", 10F);
+            label_label_right_button_combination.ForeColor = Color.White;
+            label_label_right_button_combination.Location = new Point(13, 204);
+            label_label_right_button_combination.Name = "label_label_right_button_combination";
+            label_label_right_button_combination.Size = new Size(152, 18);
+            label_label_right_button_combination.TabIndex = 47;
+            label_label_right_button_combination.Text = "Action Combination";
+            // 
+            // label_label_right_button_action
+            // 
+            label_label_right_button_action.AutoSize = true;
+            label_label_right_button_action.Font = new Font("Source Code Pro", 10F);
+            label_label_right_button_action.ForeColor = Color.White;
+            label_label_right_button_action.Location = new Point(13, 126);
+            label_label_right_button_action.Name = "label_label_right_button_action";
+            label_label_right_button_action.Size = new Size(112, 18);
+            label_label_right_button_action.TabIndex = 47;
+            label_label_right_button_action.Text = "Action Button";
+            // 
+            // label_label_right_configuration
+            // 
+            label_label_right_configuration.AutoSize = true;
+            label_label_right_configuration.Font = new Font("Source Code Pro", 10F);
+            label_label_right_configuration.ForeColor = Color.White;
+            label_label_right_configuration.Location = new Point(13, 65);
+            label_label_right_configuration.Name = "label_label_right_configuration";
+            label_label_right_configuration.Size = new Size(168, 18);
+            label_label_right_configuration.TabIndex = 46;
+            label_label_right_configuration.Text = "Configuration Button";
+            // 
+            // checkbox_right_button
+            // 
+            checkbox_right_button.AutoSize = true;
+            checkbox_right_button.ForeColor = Color.White;
+            checkbox_right_button.Location = new Point(272, 48);
+            checkbox_right_button.Name = "checkbox_right_button";
+            checkbox_right_button.Size = new Size(187, 19);
+            checkbox_right_button.TabIndex = 48;
+            checkbox_right_button.Text = "Windows action blocking";
+            checkbox_right_button.UseVisualStyleBackColor = true;
+            checkbox_right_button.CheckedChanged += checkbox_right_button_CheckedChanged;
+            // 
+            // combobox_right_button_master
+            // 
+            combobox_right_button_master.BackColor = Color.FromArgb(40, 40, 40);
+            combobox_right_button_master.FlatStyle = FlatStyle.Flat;
+            combobox_right_button_master.ForeColor = Color.White;
+            combobox_right_button_master.FormattingEnabled = true;
+            combobox_right_button_master.Location = new Point(18, 46);
+            combobox_right_button_master.Name = "combobox_right_button_master";
+            combobox_right_button_master.Size = new Size(197, 23);
+            combobox_right_button_master.TabIndex = 45;
+            // 
+            // label_right_button_master_button
+            // 
+            label_right_button_master_button.AutoSize = true;
+            label_right_button_master_button.Font = new Font("Source Code Pro", 10F);
+            label_right_button_master_button.ForeColor = Color.White;
+            label_right_button_master_button.Location = new Point(18, 25);
+            label_right_button_master_button.Name = "label_right_button_master_button";
+            label_right_button_master_button.Size = new Size(112, 18);
+            label_right_button_master_button.TabIndex = 44;
+            label_right_button_master_button.Text = "Master Button";
             // 
             // panel_middle_button
             // 
@@ -769,12 +921,47 @@
             panel_x_down_button.MouseMove += panel_Settings_MouseMove;
             panel_x_down_button.MouseUp += panel_Settings_MouseUp;
             // 
+            // toolTip_sistemas
+            // 
+            toolTip_sistemas.BackColor = Color.FromArgb(60, 60, 60);
+            toolTip_sistemas.ForeColor = Color.White;
+            // 
+            // panel_speed_mouse
+            // 
+            panel_speed_mouse.Controls.Add(label_dpi_control_percent);
+            panel_speed_mouse.Controls.Add(label_dpi_control);
+            panel_speed_mouse.Controls.Add(trackBar_dpi_control);
+            panel_speed_mouse.Controls.Add(label_right_button_master_button);
+            panel_speed_mouse.Controls.Add(combobox_right_button_master);
+            panel_speed_mouse.Controls.Add(checkbox_right_button);
+            panel_speed_mouse.Location = new Point(1064, 843);
+            panel_speed_mouse.Name = "panel_speed_mouse";
+            panel_speed_mouse.Size = new Size(520, 394);
+            panel_speed_mouse.TabIndex = 9;
+            panel_speed_mouse.Visible = false;
+            panel_speed_mouse.MouseDown += panel_Settings_MouseDown;
+            panel_speed_mouse.MouseMove += panel_Settings_MouseMove;
+            panel_speed_mouse.MouseUp += panel_Settings_MouseUp;
+            // 
+            // label_dpi_control_percent
+            // 
+            label_dpi_control_percent.AutoSize = true;
+            label_dpi_control_percent.Font = new Font("Source Code Pro", 10F);
+            label_dpi_control_percent.ForeColor = Color.White;
+            label_dpi_control_percent.Location = new Point(465, 106);
+            label_dpi_control_percent.Name = "label_dpi_control_percent";
+            label_dpi_control_percent.Size = new Size(40, 18);
+            label_dpi_control_percent.TabIndex = 51;
+            label_dpi_control_percent.Text = "100%";
+            label_dpi_control_percent.TextAlign = ContentAlignment.MiddleRight;
+            // 
             // Sistemas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(40, 40, 40);
             ClientSize = new Size(1640, 1061);
+            Controls.Add(panel_speed_mouse);
             Controls.Add(panel_x_down_button);
             Controls.Add(panel_x_up_button);
             Controls.Add(panel_middle_button);
@@ -792,8 +979,6 @@
             Paint += Sistemas_Paint;
             panel_mini_menu.ResumeLayout(false);
             panel_mini_menu.PerformLayout();
-            panel_Dashboard.ResumeLayout(false);
-            panel_Dashboard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)trackBar_dpi_control).EndInit();
             ((System.ComponentModel.ISupportInitialize)trackBar_border_radius).EndInit();
             ((System.ComponentModel.ISupportInitialize)trackBar_opacityForm).EndInit();
@@ -814,6 +999,10 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             panel_left_button.ResumeLayout(false);
+            panel_right_button.ResumeLayout(false);
+            panel_right_button.PerformLayout();
+            panel_speed_mouse.ResumeLayout(false);
+            panel_speed_mouse.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -873,5 +1062,19 @@
         private Label label_dpi_control;
         private Panel panel_x_up_button;
         private Panel panel_x_down_button;
+        private CheckBox checkbox_right_button;
+        private Label label_label_right_button_action;
+        private Label label_label_right_configuration;
+        private ComboBox combobox_right_button_master;
+        private Label label_right_button_master_button;
+        private TextBox textbox_right_button_action_combination;
+        private ComboBox combobox_right_button_action;
+        private ComboBox combobox_right_button_configuration;
+        private Label label_label_right_button_combination;
+        private ToolTip toolTip_sistemas;
+        private Label label2;
+        private Panel panel_speed_mouse;
+        private Label label_dpi_control_percent;
+        private Button button1;
     }
 }

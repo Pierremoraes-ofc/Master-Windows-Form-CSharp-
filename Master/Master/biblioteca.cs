@@ -1,5 +1,5 @@
 ﻿using System.Drawing.Drawing2D;
-using System.Runtime.InteropServices;
+using static Master.WinApi;
 
 namespace Master
 {
@@ -33,8 +33,9 @@ namespace Master
         public static bool      MasterBottomRight = false;                          //  Base Direita curva
         public static int       DayNight = 1;                                       //  Tema do Sistema 0 = Claro/Day 1 = Escuro/Night
 
-
-
+        //  Configurações do mouse
+        public static float MasterDPI = 0.2f;                                       //  Velocidade do ponteiro do Mouse
+        public static bool MasterWinAction = true;                                 //  Ativa e desativa a ação do windows ao ativar um remap
 
         // valor padrão
         public static int botoesMouse = 2;
@@ -42,8 +43,6 @@ namespace Master
         // constante do Windows
         private const int SM_CMOUSEBUTTONS = 43;
 
-        [DllImport("user32.dll")]
-        private static extern int GetSystemMetrics(int nIndex);
 
         public static void DetectordeBotoes()
         {

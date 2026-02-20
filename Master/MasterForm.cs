@@ -56,7 +56,7 @@ namespace Master
             //  Configurações de idioma
             AppPaths.EnsureDirectories();
             LanguageManager.Load(Master.biblioteca.InputLanguage);
-            Language();
+            ApplyLanguageAll();
             Cfg_load();
 
             SizeForm(Master.biblioteca.MenuSistema);
@@ -190,6 +190,7 @@ namespace Master
         }
         private void Language()
         {
+            LanguageManager.Load(Master.biblioteca.InputLanguage);
             fecharToolStripMenuItem.Text = "  " + LanguageManager.Get("rato.context.fecharToolStripMenuItem");
             abrirToolStripMenuItem.Text = "  " + LanguageManager.Get("rato.context.abrirToolStripMenuItem");
         }
@@ -226,8 +227,7 @@ namespace Master
             Master.biblioteca.Notification("error", "Erro", "Funcionou certinho!!");
 
             Master.biblioteca.Notification("success", "Sucesso", "Seu mouse tem " + total + " botões");
-
+            //ApplyLanguageAll();
         }
-
     }
 }

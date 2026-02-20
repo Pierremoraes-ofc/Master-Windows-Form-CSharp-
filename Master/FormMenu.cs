@@ -27,17 +27,17 @@ namespace Master
         }
         private void FormMenu_Load(object sender, EventArgs e)
         {
-            Language();                                         //  Aplica o Idioma
             SizeMenu(Master.biblioteca.MenuSistema);
             this.ShowInTaskbar = false;
 
             this.Size = new Size(234, 430);
-            
+
             int total = Master.biblioteca.botoesMouse;
             if (total == 2)
             {
                 icon_left_button.Visible = true;
                 icon_right_button.Visible = true;
+                icon_speed_mouse.Visible = true;
                 panel_menu_mouse.Size = new Size(234, 90);
             }
             if (total == 3)
@@ -45,6 +45,7 @@ namespace Master
                 icon_left_button.Visible = true;
                 icon_right_button.Visible = true;
                 icon_middle_button.Visible = true;
+                icon_speed_mouse.Visible = true;
                 panel_menu_mouse.Size = new Size(234, 130);
             }
             if (total == 4)
@@ -53,20 +54,23 @@ namespace Master
                 icon_right_button.Visible = true;
                 icon_middle_button.Visible = true;
                 icon_x_up_button.Visible = true;
+                icon_speed_mouse.Visible = true;
                 panel_menu_mouse.Size = new Size(234, 170);
             }
-            if (total==5)
+            if (total == 5)
             {
                 icon_left_button.Visible = true;
                 icon_right_button.Visible = true;
                 icon_middle_button.Visible = true;
                 icon_x_up_button.Visible = true;
                 icon_x_down_button.Visible = true;
+                icon_speed_mouse.Visible = true;
                 panel_menu_mouse.Size = new Size(234, 209);
             }
 
 
             Cfg_Style();                                        //  Atualiza paramatros de configuraçao
+            Language();                                         //  Aplica o Idioma
         }
         private void FormMenu_Paint(object sender, PaintEventArgs e)
         {
@@ -112,6 +116,7 @@ namespace Master
 
         public void Language()
         {
+
             icon_home.Text = "     " + LanguageManager.Get("rato.menu.home");
             icon_mouse.Text = "     " + LanguageManager.Get("rato.menu.mouse");
 
@@ -120,6 +125,7 @@ namespace Master
             icon_middle_button.Text = "     " + LanguageManager.Get("rato.menu.icon_middle_button");
             icon_x_up_button.Text = "     " + LanguageManager.Get("rato.menu.icon_x_up_button");
             icon_x_down_button.Text = "     " + LanguageManager.Get("rato.menu.icon_x_down_button");
+            icon_speed_mouse.Text = "     " + LanguageManager.Get("rato.menu.icon_speed_mouse");
 
             icon_profile.Text = "     " + LanguageManager.Get("rato.menu.profile");
             icon_setting.Text = "     " + LanguageManager.Get("rato.menu.setting");
@@ -168,6 +174,10 @@ namespace Master
                 icon_x_down_button.ForeColor = Color.Black;
                 icon_x_down_button.BackColor = Color.Silver;
 
+                icon_speed_mouse.IconColor = Color.Black;
+                icon_speed_mouse.ForeColor = Color.Black;
+                icon_speed_mouse.BackColor = Color.Silver;
+
                 panel1.BackColor = Color.FromArgb(224, 224, 224);
                 panelLogo.BackColor = Color.FromArgb(224, 224, 224);
             }
@@ -213,6 +223,10 @@ namespace Master
                 icon_x_down_button.ForeColor = Color.White;
                 icon_x_down_button.BackColor = Color.FromArgb(50, 50, 50);
 
+                icon_speed_mouse.IconColor = Color.White;
+                icon_speed_mouse.ForeColor = Color.White;
+                icon_speed_mouse.BackColor = Color.FromArgb(50, 50, 50);
+
                 panel1.BackColor = Color.FromArgb(40, 40, 40);
                 panelLogo.BackColor = Color.FromArgb(40, 40, 40);
 
@@ -238,7 +252,6 @@ namespace Master
 
         private void icon_left_button_Click(object sender, EventArgs e)
         {
-
             Master.biblioteca._formSystem?.MenuSelect(SistemaMenu.left_button, icon_left_button.Text);
         }
         private void icon_right_button_Click(object sender, EventArgs e)
@@ -256,6 +269,10 @@ namespace Master
         private void icon_x_down_button_Click(object sender, EventArgs e)
         {
             Master.biblioteca._formSystem?.MenuSelect(SistemaMenu.x_down_button, icon_x_down_button.Text);
+        }
+        private void icon_speed_mouse_Click(object sender, EventArgs e)
+        {
+            Master.biblioteca._formSystem?.MenuSelect(SistemaMenu.speed_mouse, icon_speed_mouse.Text);
         }
 
 
@@ -301,6 +318,5 @@ namespace Master
         {
             _dragging = false;
         }
-
     }
 }

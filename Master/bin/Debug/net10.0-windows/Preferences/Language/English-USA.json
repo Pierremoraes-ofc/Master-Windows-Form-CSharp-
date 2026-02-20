@@ -13,8 +13,30 @@
       "icon_middle_button": "MIDDLE BUTTON",
       "icon_x_up_button": "X UP BUTTON",
       "icon_x_down_button": "X DOWN BUTTON",
+      "icon_speed_mouse": "MOUSE SETTINGS",
       "profile": "PROFILE",
       "setting": "SETTING"
+    },
+    "mouseconfig":{
+      "none": " ",
+      "configbutton":{
+        "key": "Tecla",
+        "keycombination": "Tecla Combinada",
+        "command": "Comando"
+      },
+      "actionbutton":{
+        "copy": "Copy",
+        "paste": "Paste",
+        "cut": "Cut",
+        "undo": "Undo",
+        "remake": "Remake",
+        "new": "New",
+        "save": "Save",
+        "openfile": "Open File",
+        "selectall": "Select All",
+        "search": "Searche",
+        "print": "Print"
+      }
     },
     "setting":{
       "label_language":"Language",
